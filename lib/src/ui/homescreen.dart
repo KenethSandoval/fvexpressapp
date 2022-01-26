@@ -15,7 +15,6 @@ class _HomeWidgetState extends State<HomeWidget> {
   List<Widget> _widgetOptions = <Widget>[
   	GridScreen(),
 	ListScreen(),
-        CustomScreen( color: Colors.indigo ),
   ];
 
   void _onItemTapped(int index) {
@@ -35,10 +34,6 @@ class _HomeWidgetState extends State<HomeWidget> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.store),
             label: 'Store',
@@ -78,131 +73,32 @@ class GridScreen extends StatelessWidget {
 
 
 class ListScreen extends StatelessWidget {
+	final data_dump = <Widget> [
+					Container(
+						height: 50,
+						color: Colors.amber[600],
+						child: const Center(child: Text('Entry A')),
+					),
+					Container(
+						height: 50,
+						color: Colors.amber[500],
+						child: const Center(child: Text('Entry B')),
+					),
+					Container(
+						height: 50,
+						color: Colors.amber[100],
+						child: const Center(child: Text('Entry C')),
+					),
+				];
 	@override
 	Widget build(BuildContext context){
-		return Container(
-			child: ListView(
-				padding: const EdgeInsets.all(8),
-				children: <Widget> [
-					Container(
-						height: 50,
-						color: Colors.amber[600],
-						child: const Center(child: Text('Entry A')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[500],
-						child: const Center(child: Text('Entry B')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[100],
-						child: const Center(child: Text('Entry C')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[600],
-						child: const Center(child: Text('Entry A')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[500],
-						child: const Center(child: Text('Entry B')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[100],
-						child: const Center(child: Text('Entry C')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[600],
-						child: const Center(child: Text('Entry A')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[500],
-						child: const Center(child: Text('Entry B')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[100],
-						child: const Center(child: Text('Entry C')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[600],
-						child: const Center(child: Text('Entry A')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[500],
-						child: const Center(child: Text('Entry B')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[100],
-						child: const Center(child: Text('Entry C')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[500],
-						child: const Center(child: Text('Entry B')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[100],
-						child: const Center(child: Text('Entry C')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[600],
-						child: const Center(child: Text('Entry A')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[500],
-						child: const Center(child: Text('Entry B')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[100],
-						child: const Center(child: Text('Entry C')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[600],
-						child: const Center(child: Text('Entry A')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[500],
-						child: const Center(child: Text('Entry B')),
-					),
-					Container(
-						height: 50,
-						color: Colors.amber[100],
-						child: const Center(child: Text('Entry C')),
-					),
-				],
-			), //ListView
-		); //Container
+		return ListView.separated(
+			padding: const EdgeInsets.all(8),
+			itemCount: data_dump.length,
+			itemBuilder: (BuildContext context, int index)  {
+				return data_dump[index];
+			},
+			separatorBuilder: (BuildContext context, int index) => const Divider(),
+		); //ListView
 	}
-}
-
-class CustomScreen extends StatelessWidget {
-
-  final Color color;
-
-  const CustomScreen({ required this.color });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: color,
-      child: Center(
-        child: Text('Custom Screen'),
-      ),
-    );
-  }
 }
