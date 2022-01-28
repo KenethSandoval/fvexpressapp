@@ -51,20 +51,19 @@ class _HomeWidgetState extends State<HomeWidget> {
   }
 }
 
-
 class GridScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Container( 
       child: GridView(
-      	padding: const EdgeInsets.all(25),
+      	padding: const EdgeInsets.all(5),
 	children: DUMMY_PRODUCT.map((product) => ProductsItem(product.title, product.color)).toList(),
 	gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
 		maxCrossAxisExtent: 200,
 		childAspectRatio: 3/2,
-		crossAxisSpacing: 20,
-		mainAxisSpacing: 20
+		crossAxisSpacing: 10,
+		mainAxisSpacing: 10
 	), //SliverGridDelegateWithFixedCrossAxisCount
       ), //GridView
     ); // Container

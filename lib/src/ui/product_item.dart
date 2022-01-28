@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './color_filters.dart';
 
 class ProductsItem extends StatelessWidget {
 	final String title;
@@ -8,48 +9,33 @@ class ProductsItem extends StatelessWidget {
 
 	@override
 	Widget build(BuildContext context) {
-		return Container(
-			padding: const EdgeInsets.all(15),
-			child: Card(
-				child: InkWell(
-					splashColor: Colors.blue.withAlpha(30),
-					onTap: () {
-						debugPrint('Card tapped');
-					},
-					child: SizedBox(
-						width: 500,
-						height: 300,
-						child: Text(title),
-					),
-				), //InkWell
-			), //Card
-		); //Container
+		return Card(
+			clipBehavior: Clip.antiAlias,
+			shape: RoundedRectangleBorder(
+				borderRadius: BorderRadius.circular(1)
+			), //RoundedRectangleBorder
+			child: Stack(
+				alignment: Alignment.center,
+				children: [
+					Ink.image(
+						image: NetworkImage(
+							'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jMgOTymBAtTT2GYPtmWumQHaDp%26pid%3DApi&f=1',
+						),
+						child: InkWell(
+                					onTap: () {},
+              					),
+              					fit: BoxFit.cover,
+            				),
+            				Text(
+              					title,
+              					style: TextStyle(
+                					fontWeight: FontWeight.bold,
+                					color: Colors.white,
+                					fontSize: 14,
+						),
+            				),
+				],
+			), //Stack
+		); // Card
 	}
 }
-
-/*
-class ProductsItem extends StatelessWidget {
-	final String title;
-	final Color color;
-
-	ProductsItem(this.title, this.color);
-
-	@override
-	Widget build(BuildContext context) {
-		return Container(
-			padding: const EdgeInsets.all(15),
-			child: Text(title),
-			decoration: BoxDecoration(
-				gradient: LinearGradient(
-					colors: [
-						color.withOpacity(0.7),
-						color
-					],
-					begin: Alignment.topLeft,
-					end: Alignment.bottomRight
-				), //LinearGradient
-				borderRadius: BorderRadius.circular(15)	
-			), //BoxDecoration
-		); //Container
-	}
-}*/
