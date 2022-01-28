@@ -1,3 +1,5 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import './product_item.dart';
 import '../dummy_data.dart';
@@ -50,6 +52,26 @@ class _HomeWidgetState extends State<HomeWidget> {
     );
   }
 }
+
+class SplashScreen extends StatelessWidget {
+	const SplashScreen({Key? key}) : super(key: key);
+
+	@override
+	Widget build(BuildContext context) {
+		return AnimatedSplashScreen(
+			splash: Column(
+				children: [
+					const Text('cargando...')
+				],
+			), //Column
+			backgroundColor: Colors.red,
+			nextScreen: HomeWidget(),
+			duration: 4000,
+			splashTransition: SplashTransition
+		); //Container
+	}
+}
+
 
 class GridScreen extends StatelessWidget {
 
