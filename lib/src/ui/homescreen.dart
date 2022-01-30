@@ -15,7 +15,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   int _selectedIndex = 0;
 
   List<Widget> _widgetOptions = <Widget>[
-  	GridScreen(),
+  	StoreScreen(),
 	ListScreen(),
   ];
 
@@ -59,37 +59,35 @@ class SplashScreen extends StatelessWidget {
 	@override
 	Widget build(BuildContext context) {
 		return AnimatedSplashScreen(
-			splash: Column(
-				children: [
-					const Text('cargando...')
-				],
-			), //Column
-			backgroundColor: Colors.red,
+			splash:Lottie.asset('assets/loading.json'),
+			backgroundColor: Colors.lightGreenAccent,
 			nextScreen: HomeWidget(),
-			duration: 4000,
-			splashTransition: SplashTransition
-		); //Container
+			splashIconSize: 350,
+			duration: 3000,
+			splashTransition: SplashTransition.sizeTransition,
+			animationDuration: const Duration(seconds: 1),
+		); //AnimatedSplashScreen
 	}
 }
 
-
-class GridScreen extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return Container( 
-      child: GridView(
-      	padding: const EdgeInsets.all(5),
-	children: DUMMY_PRODUCT.map((product) => ProductsItem(product.title, product.color)).toList(),
-	gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-		maxCrossAxisExtent: 200,
-		childAspectRatio: 3/2,
-		crossAxisSpacing: 10,
-		mainAxisSpacing: 10
-	), //SliverGridDelegateWithFixedCrossAxisCount
-      ), //GridView
-    ); // Container
-  }
+class StoreScreen extends StatelessWidget {
+	@override
+	Widget build(BuildContext context){
+	return ListView.builder(
+	    itemCount: 1,
+            itemBuilder: (context, index) {
+              return Container(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Card(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: DUMMY_PRODUCT.map((product) => ProductsItem(product.title, product.color)).toList(),
+                  ),
+                ),
+              );
+            }
+	);
+	}
 }
 
 
