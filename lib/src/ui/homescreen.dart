@@ -1,6 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
+import './grocery_store.dart';
 import './product_item.dart';
 import '../dummy_data.dart';
 
@@ -15,7 +16,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   int _selectedIndex = 0;
 
   List<Widget> _widgetOptions = <Widget>[
-  	StoreScreen(),
+  	GroceryStoreHome(),
 	ListScreen(),
   ];
 
