@@ -73,20 +73,20 @@ class SplashScreen extends StatelessWidget {
 class StoreScreen extends StatelessWidget {
 	@override
 	Widget build(BuildContext context){
-	return ListView.builder(
-	    itemCount: 1,
-            itemBuilder: (context, index) {
-              return Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Card(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: DUMMY_PRODUCT.map((product) => ProductsItem(product.title, product.color)).toList(),
-                  ),
-                ),
-              );
-            }
-	);
+		return ListView.builder(
+	    		itemCount: 1,
+            		itemBuilder: (context, index) {
+              			return Container(
+                			padding: const EdgeInsets.only(bottom: 8),
+                			child: Card(
+                  				child: Column(
+                    					mainAxisSize: MainAxisSize.min,
+                    					children: DUMMY_PRODUCT.map((product) => ProductsItem(product.title, product.color)).toList(),
+                  				),
+                			),
+              			);
+            		}
+		);
 	}
 }
 
