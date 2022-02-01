@@ -8,9 +8,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: Center(
-        child: Text('Hello world'),
-      ),
+      body: Body(),
     );
   }
 
@@ -32,7 +30,7 @@ class HomeScreen extends StatelessWidget {
 	),
 	IconButton(
       	  icon: SvgPicture.asset(
-	  	"assets/icons/search.svg", 
+	  	"assets/icons/cart.svg", 
 		color: kTextColor,
 	  ),
 	  onPressed: () {},
