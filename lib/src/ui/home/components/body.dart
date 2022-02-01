@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
 	    style: Theme.of(context)
 	      .textTheme
 	      .headline5
-	      ..copyWith(fontWeight: FontWeight.bold),
+	      .copyWith(fontWeight: FontWeight.bold),
 	  ),
 	),
 	Categories(),
@@ -35,7 +35,14 @@ class Body extends StatelessWidget {
 	      ), // SliverGridDelegateWithFixedCrossAxisCount
 	      itemBuilder: (context, index) => ItemCard(
 		product: products[index],
-		press: () => print('press'),
+		press: () => Navigator.push(
+		  context,
+		  MaterialPageRoute(
+		    builder: (context) => DetailsScreen(
+		      product: products[index],
+		    ), //DetailsScreen
+		  ), //MaterialPageRoute
+		), //Navigator
 	      ), //ItemCard
 	    ), //GridView
 	  ), //Padding
