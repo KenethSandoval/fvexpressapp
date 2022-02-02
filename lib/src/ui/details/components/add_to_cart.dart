@@ -6,7 +6,7 @@ import '../../../../constants.dart';
 
 class AddToCart extends StatelessWidget {
   const AddToCart({
-    Key key,
+    Key? key,
     required this.product
   }) : super(key:key);
 
@@ -25,7 +25,7 @@ class AddToCart extends StatelessWidget {
 	    decoration: BoxDecoration(
 	      borderRadius: BorderRadius.circular(18),
 	      border: Border.all(
-		color: product.color,
+		color: product.color!
 	      ),
 	    ), //BoxDecoration
 	    child: IconButton(

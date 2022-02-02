@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../constants.dart';
 import '../../../models/Product.dart';
+import '../../details/details_screen.dart';
 import './categorries.dart';
 import './item_card.dart';
 
@@ -18,7 +19,7 @@ class Body extends StatelessWidget {
 	    style: Theme.of(context)
 	      .textTheme
 	      .headline5
-	      .copyWith(fontWeight: FontWeight.bold),
+	      //.copyWith(fontWeight: FontWeight.bold)
 	  ),
 	),
 	Categories(),

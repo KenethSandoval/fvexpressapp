@@ -4,10 +4,13 @@ import '../../../constants.dart';
 import '../../models/Product.dart';
 import './components/body.dart';
 
-class DetailsScreen extends StatlessWidget {
+class DetailsScreen extends StatelessWidget {
   final Product product;
 
-  const DetailsScreen({Key key, this.product}) : super(key: key);
+  const DetailsScreen({
+	  Key? key, 
+	  required this.product
+  }) : super(key: key);
   @override
   Widget build(BuildContext context){
     return Scaffold(
