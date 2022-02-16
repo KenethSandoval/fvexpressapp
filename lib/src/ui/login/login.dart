@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 20.0,
               ),
               Text(
-                'SeaFood',
+                'FVExpress',
                 style: TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 20.0,
               ),
               Text(
-                'Additional information provided here.',
+                'Crea tu cuenta o inicia sesion',
                 style: TextStyle(
                   fontSize: 18.0,
                   color: Colors.grey,
@@ -67,8 +67,8 @@ class _LoginPageState extends State<LoginPage> {
                   indicatorSize: TabBarIndicatorSize.label,
                   labelStyle: TextStyle(fontSize: 18.0),
                   tabs: [
-                    Tab(text: 'Login'),
-                    Tab(text: 'Registrasi'),
+                    Tab(text: 'Ingresar'),
+                    Tab(text: 'Registrar'),
                   ],
                 ),
               ),
@@ -94,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                                 autocorrect: true,
                                 maxLines: 1,
                                 decoration: InputDecoration(
-                                  hintText: 'Useraname',
+                                  hintText: 'Usuario',
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide.none,
                                   ),
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                                 autocorrect: true,
                                 maxLines: 1,
                                 decoration: InputDecoration(
-                                  hintText: 'Password',
+                                  hintText: 'Contraseña',
                                   filled: true,
                                   fillColor: Color(0xffEFF0F6),
                                   border: OutlineInputBorder(
@@ -138,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                                     backgroundColor:
                                         Theme.of(context).primaryColor),
                                 child: Text(
-                                  'Login',
+                                  'Iniciar sesion',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20.0,
@@ -169,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
                                 autocorrect: true,
                                 maxLines: 1,
                                 decoration: InputDecoration(
-                                  hintText: 'Create a Username',
+                                  hintText: 'Usuario',
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide.none,
                                   ),
@@ -191,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
                                 autocorrect: true,
                                 maxLines: 1,
                                 decoration: InputDecoration(
-                                  hintText: 'Create a Password',
+                                  hintText: 'Contraseña',
                                   filled: true,
                                   fillColor: Color(0xffEFF0F6),
                                   border: OutlineInputBorder(
@@ -211,20 +211,7 @@ class _LoginPageState extends State<LoginPage> {
                               decoration: BoxDecoration(
                                 color: Color(0xffEFF0F6),
                                 borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: TextField(
-                                autocorrect: true,
-                                maxLines: 1,
-                                decoration: InputDecoration(
-                                  hintText: 'Confirm Password',
-                                  filled: true,
-                                  fillColor: Color(0xffEFF0F6),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide.none,
-                                  ),
-                                ),
-                              ),
+                              ), 
                             ),
                             SizedBox(
                               height: 20.0,
@@ -238,7 +225,7 @@ class _LoginPageState extends State<LoginPage> {
                                     backgroundColor:
                                         Theme.of(context).primaryColor),
                                 child: Text(
-                                  'Create Account',
+                                  'Crear cuenta',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20.0,
